@@ -1,0 +1,83 @@
+// Core imports
+@import "compass";
+
+// Default project mixins
+@import "mixins";
+
+
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	padding: 0;
+}
+
+::-moz-selection {
+	background: #318dfd;
+	color: #fff;
+}
+::selection {
+	background: #318dfd;
+	color: #fff;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+a{
+	@include transition(200ms);
+	text-decoration: none;
+}
+
+img{
+	width: auto;
+	height: auto;
+	max-width: 100%;
+}
+
+
+// VARIABLES
+$c-border: #ddd;
+
+
+
+
+.tabs-css{
+	float: left;
+	width: 100%;
+	> section {
+		display: none;
+	}
+
+	> input {
+		display: none;
+	}
+
+	> label {
+		display: inline-block;
+		background-color: rgba(#f0f0f0, 0.7);
+	}
+
+	#tab1:checked ~ #content1,
+	#tab2:checked ~ #content2{
+		display: block;
+	}
+
+	#tab1:checked ~ #labeltab1,
+	#tab2:checked ~ #labeltab2{
+		background-color: white;
+		border-bottom: 1px solid #fff;
+		pointer-events: none;
+	}
+
+	section{
+		float: left;
+		width: 100%;
+		background-color: white;
+		padding: 10px 15px;
+		margin-top: -1px;
+		border: 1px solid #dedede
+	}
+}

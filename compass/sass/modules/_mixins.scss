@@ -1,0 +1,70 @@
+@mixin clearfix() {
+    // http://nicolasgallagher.com/micro-clearfix-hack/
+    // USAGE: @include clearfix();
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//MIXINS TRANSITION
+@mixin transitions($valor){
+    transition: all ($valor) ease-in-out;
+    -webkit-transition: all ($valor) ease-in-out;
+    -moz-transition: all ($valor) ease-in-out;
+    -o-transition: all ($valor) ease-in-out;
+    -ms-transition: all ($valor) ease-in-out;
+}
+
+//MIXINS TRANSFORM
+@mixin transform($valor){
+    transform: ($valor);
+    -webkit-transform: ($valor);
+    -moz-transform: ($valor);
+    -o-transform: ($valor);
+    -ms-transform: ($valor);
+}
+
+
+$mq-support: true !default;
+$mq-fixed-value: 1024px !default;
+
+@mixin bp($feature, $value) {
+    // Set global device param
+    $media: only screen;
+
+    // Media queries supported
+    @if $mq-support == true {
+
+        @media #{$media} and ($feature: $value) {
+            @content;
+        }
+
+        // Media queries not supported
+        } @else {
+
+            @if $feature == 'min-width' {
+                @if $value <= $mq-fixed-value {
+                    @content;
+                }
+                } @else if $feature == 'max-width' {
+                    @if $value >= $mq-fixed-value {
+                        @content;
+                    }
+                }
+
+            }
+        }
+
+        @mixin between-bp($min, $max) {
+            @media (min-width: $min) and (max-width: $max) {
+                @content;
+            }
+        }

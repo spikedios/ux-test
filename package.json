@@ -1,0 +1,13 @@
+{
+  "name": "ux-test",
+  "version": "1.0.0",
+  "description": "ux-test mlibre",
+  "main": "index.html",
+  "author": "Iván Díaz",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-htmlmin": "^2.0.0",
+    "grunt-contrib-uglify": "^2.0.0"
+  }
+}
