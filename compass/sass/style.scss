@@ -4,17 +4,12 @@
 // See modules/_base.scss
 @import "modules/base";
 
-@import "partials/header";
-@import "partials/product";
-@import "partials/category";
-@import "partials/footer";
-
-
 #test-section{
 	background: #f4f4f4;
 	border: 1px solid $c-border;
 	max-width: 90vw;
 	width: 900px;
+    margin: 0;
 
 	.product-details{
 		display: flex;

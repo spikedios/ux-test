@@ -376,6 +376,7 @@ img {
   border: 1px solid #ddd;
   max-width: 90vw;
   width: 900px;
+  margin: 0;
 }
 #test-section .product-details {
   display: flex;
